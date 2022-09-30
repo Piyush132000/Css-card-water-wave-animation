@@ -1,0 +1,153 @@
+
+
+body{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(7, 7, 47);
+}
+
+
+body::before{
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgb(242, 74, 74);
+    box-shadow: 4px 9px 30px 17px rgba(255, 39, 39, 0.88);
+    flex-wrap: wrap;
+
+
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    bottom: -159px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgb(74, 119, 242);
+    box-shadow: -6px -4px 30px 17px rgb(63 133 255 / 88%);
+
+}
+
+.container {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    height: 100%;
+    padding: 0 60px 0 80px;
+    overflow: scroll;
+    flex-flow: wrap;
+    scroll-behavior: smooth;
+
+}
+
+
+.card {
+    overflow: hidden;
+    position:relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    margin: 53px;
+    z-index: 1;
+    box-shadow:  20px 20px 50px rgba(0, 0, 0,0.5);
+    color: white;
+    border-radius: 10px;
+    background: rgb(255 255 255 / 17%);
+
+}
+
+
+.card:hover:before{
+    content: '';
+	position: absolute;
+	width: 200%;
+	height: 100px;
+    bottom: 0;
+	background: rgb(77, 103, 251);
+    clip-path: polygon(0% 54%, 2% 48%, 5% 43%, 6% 40%, 8% 38%, 10% 35%, 12% 34%, 14% 35%, 16% 36%, 17% 39%, 19% 41%, 21% 44%, 22% 47%, 24% 50%, 25% 52%, 28% 53%, 29% 53%, 31% 52%, 33% 49%, 35% 45%, 37% 39%, 39% 37%, 41% 35%, 43% 34%, 44% 35%, 46% 37%, 47% 41%, 48% 43%, 50% 46%, 51% 47%, 52% 49%, 54% 51%, 55% 51%, 57% 52%, 59% 49%, 60% 46%, 61% 43%, 63% 39%, 64% 36%, 66% 34%, 67% 32%, 69% 31%, 70% 30%, 71% 32%, 73% 33%, 73% 36%, 74% 39%, 75% 42%, 77% 43%, 78% 45%, 78% 47%, 80% 50%, 82% 50%, 84% 51%, 85% 48%, 86% 45%, 87% 43%, 88% 41%, 90% 37%, 91% 36%, 92% 36%, 93% 35%, 95% 36%, 97% 37%, 98% 39%, 100% 41%, 100% 99%, 51% 100%, 0% 100%);
+    animation: move-forever 1s  linear  infinite ;
+
+}
+
+.card:hover::after{
+    content: '';
+	position: absolute;
+	width: 200%;
+	height: 100px;
+    bottom: 0;
+    z-index: -1;
+	background: #44b3fd;
+    clip-path: polygon(0% 54%, 2% 48%, 5% 43%, 6% 40%, 8% 38%, 10% 35%, 12% 34%, 14% 35%, 16% 36%, 17% 39%, 19% 41%, 21% 44%, 22% 47%, 24% 50%, 25% 52%, 28% 53%, 29% 53%, 31% 52%, 33% 49%, 35% 45%, 37% 39%, 39% 37%, 41% 35%, 43% 34%, 44% 35%, 46% 37%, 47% 41%, 48% 43%, 50% 46%, 51% 47%, 52% 49%, 54% 51%, 55% 51%, 57% 52%, 59% 49%, 60% 46%, 61% 43%, 63% 39%, 64% 36%, 66% 34%, 67% 32%, 69% 31%, 70% 30%, 71% 32%, 73% 33%, 73% 36%, 74% 39%, 75% 42%, 77% 43%, 78% 45%, 78% 47%, 80% 50%, 82% 50%, 84% 51%, 85% 48%, 86% 45%, 87% 43%, 88% 41%, 90% 37%, 91% 36%, 92% 36%, 93% 35%, 95% 36%, 97% 37%, 98% 39%, 100% 41%, 100% 99%, 51% 100%, 0% 100%);
+    animation: move-forever 1s  linear  infinite  reverse;
+
+}
+
+
+
+@keyframes move-forever {
+    0% {
+     transform: translateX(-200px);
+    }
+    100% { 
+      transform: translateX(60px);
+    }
+  }
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+
+.card-heading{
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-description{
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    line-height: 20px;
+    text-align: center;
+
+    padding: 20px;
+    text-rendering: optimizeSpeed;
+}
+
+.card-action > button{
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 10px 40px 10px 40px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+}
+
+button:hover{
+    box-shadow: 1px 2px 20px rgb(240 238 238 / 85%);
+    transform: scale(0.9);
+    transition: 0.1s all;
+}
+
+button:active{
+    box-shadow: 1px 2px 30px rgb(240 238 238 / 85%);
+    transform: scale(0.5);
+    transition: 0.1s all;
+}
